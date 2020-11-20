@@ -18,3 +18,4 @@ object Version {
 
 infix fun String.version(versionProvider: Version.() -> String) =
     "$this:${versionProvider(Version)}"
+
