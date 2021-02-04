@@ -5,9 +5,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core"))
-
-    api("com.fasterxml.jackson.module:jackson-module-kotlin" version {jackson})
-    api("io.ktor:ktor-client-cio" version { ktor })
-    api("io.ktor:ktor-client-serialization-jvm" version { ktor })
+    core()
+    api(jackson())
+    api(ktor("ktor-client-cio"))
+    api(ktor("ktor-client-serialization-jvm"))
 }
