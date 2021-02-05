@@ -3,7 +3,6 @@ plugins {
 }
 
 allprojects {
-
     group = "com.justai.jaicf"
     version = "0.10.2"
 
@@ -11,8 +10,6 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        mavenLocal()
         maven(uri("https://jitpack.io"))
     }
-
 }
