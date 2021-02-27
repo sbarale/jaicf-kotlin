@@ -20,7 +20,6 @@ internal class ChatAdapterConnector(
 ) : WithLogger {
 
     private val baseUrl = "$url/restapi/external-bot/$accessToken"
-    private val versionUrl = "$url/version"
 
     fun listChannels(): List<ChannelConfig> = runBlocking {
         try {
@@ -29,8 +28,6 @@ internal class ChatAdapterConnector(
             throw error("Invalid access token: $e")
         }
     }
-
-    fun getVersion() = runBlocking { httpClient.get<JsonObject>(versionUrl)["buildBranch"]?.jsonPrimitive?.content }
 
     suspend fun processLogAsync(logModel: JaicpLogModel) {
         try {
